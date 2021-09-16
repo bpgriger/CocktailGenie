@@ -5,11 +5,14 @@
     text-align: center;
     background-color: #1b3a4b;
     font-family: 'Shrikhand', cursive;
+    border-radius: 50px;
+    opacity: 80%;
 }
 
 body{
-    background-color: #3e1f47;
+    background-color: beige;
     color: white;
+    text-shadow: 2px 2px #000000;
 }
 
 .flexbox{
@@ -28,4 +31,8 @@ body{
 .title{
     font-style: italic;
 
+}
+
+.link{
+    cursor: pointer;
 }
