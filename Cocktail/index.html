@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Cocktail Genie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="wrapper">
+        <h1>Cocktail Genie</h1>
+        <h4>Select an alcohol type to display cocktails</h4>
+        <select name="booze" id="booze">
+            <option value="default">--Select An Alcohol--</option>
+            <option value="bourbon">Bourbon</option>
+            <option value="scotch">Scotch</option>
+            <option value="vodka">Vodka</option>
+            <option value="tequila">Tequila</option>
+            <option value="rum">Rum</option>
+            <option value="gin">Gin</option>
+        </select>
+        <div id="list" class="flexbox"></div>
+    </div>
+    <script src="cocktail.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+#wrapper{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    background-color: #1b3a4b;
+    font-family: 'Shrikhand', cursive;
+}
+
+body{
+    background-color: #3e1f47;
+    color: white;
+}
+
+.flexbox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.flexbox div{
+    margin: 6px;
+}
+
+.title{
+    font-style: italic;
+
+}
