@@ -11,7 +11,8 @@
   <body>
     <div id="wrapper">
         <h1>Cocktail Genie</h1>
-        <h4>Select an alcohol type to display cocktails</h4>
+        <h4>Select an alcohol type to display three random cocktails</h4>
+        <h4>After making a selection click re-roll to get a different random set of cocktails</h4>
         <select name="booze" id="booze">
             <option value="default">--Select An Alcohol--</option>
             <option value="bourbon">Bourbon</option>
@@ -20,7 +21,9 @@
             <option value="tequila">Tequila</option>
             <option value="rum">Rum</option>
             <option value="gin">Gin</option>
+          
         </select>
+        <button id="reroll" class="hidden">Re-Roll</button>
         <div id="list" class="flexbox"></div>
         <div id="recipe"></div>
     </div>

@@ -1,7 +1,10 @@
 let selection = document.getElementById('booze');
 let list = document.getElementById('list');
 let recipe = document.getElementById('recipe');
-selection.addEventListener('change', ()=>{
+let reroll = document.getElementById('reroll');
+
+
+function getResults(){
     recipe.innerHTML = '';
     let value = selection.options[selection.selectedIndex].value;
     if(value != 'default'){
@@ -11,8 +14,23 @@ selection.addEventListener('change', ()=>{
             .then(response => response.json()
             ).then(jsonResponse =>{
                 console.log(jsonResponse);
-                for(let x = 0; x < 3; x++){
+               
+                let indexArr = [];
+                for(let x = 0; x < 3; x++){              
                     let randomIndex = Math.floor(Math.random() * (jsonResponse.drinks.length - 1))
+                    let exists = indexArr.includes(randomIndex);
+                    if(!exists){
+                        indexArr.push(randomIndex);
+                    } else {
+                        while(exists){
+                            randomIndex = Math.floor(Math.random() * (jsonResponse.drinks.length - 1))
+                            exists = indexArr.includes(randomIndex);
+                            if(!exists){
+                                indexArr.push(randomIndex);
+                            }
+
+                        }
+                    }
                     let name = jsonResponse.drinks[randomIndex].strDrink;
                     let imgUrl = jsonResponse.drinks[randomIndex].strDrinkThumb + '/preview';
                     let id = jsonResponse.drinks[randomIndex].idDrink;
@@ -20,6 +38,7 @@ selection.addEventListener('change', ()=>{
                     holder.innerHTML = `<p class='title'>${name}</p><br/>` +
                                     `<img src='${imgUrl}' alt='${id}' class='link'>`;
                     list.appendChild(holder);
+                  
                 }
                 let links = document.getElementsByClassName('link');
 
@@ -55,5 +74,18 @@ selection.addEventListener('change', ()=>{
                     })
                 }
             }) 
+            
     }
+}
+
+
+
+selection.addEventListener('change', ()=>{
+    getResults();
+    reroll.classList.remove('hidden');
+})
+
+reroll.addEventListener('click', ()=>{
+    list.innerHTML = '';
+    getResults();
 })

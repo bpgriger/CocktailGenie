@@ -35,4 +35,9 @@ body{
 
 .link{
     cursor: pointer;
+    border-radius: 100%;
+}
+
+.hidden{
+    display: none;
 }
