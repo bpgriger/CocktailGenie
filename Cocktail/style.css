@@ -10,9 +10,9 @@
 }
 
 body{
-    background-color: beige;
+    background-color: black;
     color: white;
-    text-shadow: 2px 2px #000000;
+    text-shadow: 3px 3px #000000;
 }
 
 .flexbox{
@@ -41,3 +41,10 @@ body{
 .hidden{
     display: none;
 }
+
+@media only screen and (max-width: 600px) {
+    #wrapper {
+      width: 100%;
+    }
+  }
+
